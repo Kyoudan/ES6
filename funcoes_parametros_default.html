@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x = prompt('Nome do personagem')
+        var y = prompt('Ela adorava')
+        var z = prompt('atividadee')
+        var w = prompt('periodo')
+        var gen = prompt('Genero')
+
+        if(gen === 'masculino'){
+                var gen = 'um garoto chamado'
+                var gen2 = 'ele'
+            } else if (gen === 'feminino'){
+                var gen = 'uma garota chamada'
+                var gen2 = 'ela'
+            }
+
+
+        function historia(personagem = 'Luana', adora = 'café', atividade = 'caminhada', periodo = 'a manhã', gen){
+
+
+            document.write(`Era uma vez ${gen} ${personagem}, ${gen2} adorava ${adora} e fazer ${atividade} durante ${periodo}`)
+            console.log(gen)
+            console.log(gen2)
+        }
+
+
+
+        historia(x, y, z, w, gen)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

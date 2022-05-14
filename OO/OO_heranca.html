@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Animal{
+            constructor(){
+                this.cor = 'branco e marrom'
+                this.tamanho = '10'
+            }
+        }
+
+        class Cachorro extends Animal{
+            constructor(){
+                super()
+                this.orelha = 'Baixas'
+                this.corre = 'Rapido'
+            }
+
+        correr(){
+            console.log(corre)
+        }
+        }
+
+        class Coruja extends Animal{
+            constructor(){
+                super()
+                this.bico = 'pequeno'
+                this.voar = 'alto'
+            }
+        }
+
+        class papagaio extends Coruja{
+            constructor(){
+                super()
+                this.falar = true
+            }
+
+            falar(){
+                console.log('Falar')
+            }
+        }
+
+        let x = new Cachorro()
+        console.log(x) 
+        let y = new Coruja()
+        console.log(y)
+        let z = new papagaio()
+        console.log(z)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

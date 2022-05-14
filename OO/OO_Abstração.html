@@ -34,43 +34,89 @@
         let x = new ContaBancaria()
         
         function consulte(){
-            document.getElementById("teste").innerHTML = x.consultar()
+            //document.getElementById("teste").innerHTML = x.consultar()
+            const node = document.createElement("li");
+            const textnode = document.createTextNode(x.consultar());
+            node.appendChild(textnode);
+            document.getElementById("testee").appendChild(node);
         }
 
         function Saque(){
             var Saque = document.getElementById("numero").value
 
-            Saque = parseInt(Saque)
 
-            x.sacar(Saque)
+            if(Saque == '' ){
+                alert('Valor Indefinido')
+                var Saque = document.getElementById("numero"). value = ''
+            } else if(Saque > x.consultar()){
+                alert(`${Saque} é maior que o seu saldo, Valor do saldo: ${x.consultar()}`)
+                var Saque = document.getElementById("numero"). value = ''
+            }else{
+                Saque = parseInt(Saque)
+                x.sacar(Saque)
+                        const node = document.createElement("li");
+                const textnode = document.createTextNode(`- ${Saque}`);
+                node.appendChild(textnode);
+                document.getElementById("testee").appendChild(node);
+                document.getElementById("teste").innerHTML = x.consultar()
+                var Saque = document.getElementById("numero"). value = ''
+            }
         }
 
         function Depositar(){
             var Depositar = document.getElementById("numeroo").value
 
-            Depositar = parseInt(Depositar)
+            if(Depositar == '' ){
+                alert('Valor Indefinido')
+            }else{
+                Depositar = parseInt(Depositar)
+                x.depositar(Depositar)
+                        const node = document.createElement("li");
+                const textnode = document.createTextNode(`+ ${Depositar}`);
+                node.appendChild(textnode);
+                document.getElementById("testee").appendChild(node);
+                document.getElementById("teste").innerHTML = x.consultar()
+                var Depositar = document.getElementById("numeroo"). value = ''
+            }
 
-            x.depositar(Depositar)
+
+
+
 
         }
-
-
     </script>
 </head>
 <body>
     <br>
     <input type="text" name="texto" id="numero">
     <button onclick="Saque()">Sacar</button>
+
+    <br>
+    <br>
     <hr>
     <br>
+
+
     <input type="text" name="texto" id="numeroo">
     <button onclick="Depositar()">Depositar</button>
+
+    <br>
+    <br>
     <hr>
     <br>
-    <button onclick="consulte()">consultar saldo</button>
-    <hr>
-    <br>
+    
+    <div id="testee">
     <p>Valor do saldo: </p>
     <p id="teste">0</p>
+
+    
+    <br>
+    <hr>
+    <br>
+    Historico:
+
+    </div>
+
+
 </body>
 </html>

@@ -34,7 +34,7 @@
         let x = new ContaBancaria()
         
         function consulte(){
-            console.log(x.consultar())
+            document.getElementById("teste").innerHTML = x.consultar()
         }
 
         function Saque(){
@@ -68,5 +68,9 @@
     <hr>
     <br>
     <button onclick="consulte()">consultar saldo</button>
+    <hr>
+    <br>
+    <p>Valor do saldo: </p>
+    <p id="teste">0</p>
 </body>
 </html>

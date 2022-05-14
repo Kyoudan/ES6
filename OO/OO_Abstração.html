@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class ContaBancaria{
+            //agencia
+            //numero da conta
+            //limite
+            //saldo
+            constructor(){
+                this.agencia = 1054
+                this.conta = 5891403
+                this.saldo = 0
+                this.limite = 1000
+            }
+
+            depositar(ValorDeposito){
+                this.saldo += ValorDeposito
+            }
+
+            sacar(ValorSaque){
+                this.saldo -= ValorSaque
+            }
+
+            consultar(){
+                return this.saldo
+            }
+        }
+
+        let x = new ContaBancaria()
+        
+        function consulte(){
+            console.log(x.consultar())
+        }
+
+        function Saque(){
+            var Saque = document.getElementById("numero").value
+
+            Saque = parseInt(Saque)
+
+            x.sacar(Saque)
+        }
+
+        function Depositar(){
+            var Depositar = document.getElementById("numeroo").value
+
+            Depositar = parseInt(Depositar)
+
+            x.depositar(Depositar)
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <br>
+    <input type="text" name="texto" id="numero">
+    <button onclick="Saque()">Sacar</button>
+    <hr>
+    <br>
+    <input type="text" name="texto" id="numeroo">
+    <button onclick="Depositar()">Depositar</button>
+    <hr>
+    <br>
+    <button onclick="consulte()">consultar saldo</button>
+</body>
+</html>
